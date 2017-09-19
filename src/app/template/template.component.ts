@@ -14,6 +14,16 @@ import {Component} from '@angular/core';
 export class TemplateComponent {
     title = 'app';
     inputShown:boolean = false;
+    personne = {
+        nom: '',
+        prenom: '',
+        age:0,
+        chien: {}
+    };
+
+    afficher() {
+        console.log(this.personne);
+    }
   
     methode() {
       this.title = 'autre chose';

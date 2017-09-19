@@ -11,9 +11,7 @@ Certain attributs angular comme le ngModel font transiter
 les valeurs de la vue vers le component et inversement
 simultanement, elles sont indiquées entre crochets et
 parenthèses [()], banana in a box -->
-<input type="text" 
-      [(ngModel)]="title" 
-      [hidden]="inputShown">
+<input type="text" [(ngModel)]="title" [hidden]="inputShown">
 
 <!-- en utilisant le [hidden] qui attend une variable
 de type boolean, faire en sorte que l'input soit
@@ -24,6 +22,32 @@ affiché ou non au click sur un bouton en dessous -->
 number et indiqué en dessous le résultat de l'addition
 de ces deux input -->
 
-<input type="number" [(ngModel)]="a">  
-<input type="number" [(ngModel)]="b">  
-{{a+b}}
+<input type="number" [(ngModel)]="a">
+<input type="number" [(ngModel)]="b"> {{a+b}}
+
+<p>
+    <label>Nom :</label>
+    <input type="text" [(ngModel)]="personne.nom">
+</p>
+<p>
+    <label>Prénom :</label>
+    <input type="text" [(ngModel)]="personne.prenom">
+</p>
+<p>
+    <label>Age :</label>
+    <input type="number" [(ngModel)]="personne.age">
+</p>
+<label>J'ai un chien</label>
+<input type="checkbox" [(ngModel)]="chienForm">
+
+<section [hidden]="!chienForm">
+    <p>
+        <label>Nom du Chien :</label>
+        <input type="text" [(ngModel)]="personne.chien.nom">
+    </p>
+    <p>
+        <label>Race du Chien :</label>
+        <input type="text" [(ngModel)]="personne.chien.race">
+    </p>
+</section>
+<button (click)="afficher()">Afficher</button>
