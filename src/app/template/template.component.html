@@ -1,0 +1,29 @@
+<!-- Les parenthèses indiques des valeurs allant de
+la vue vers le component (ici, le click sur le h1 
+déclenche la méthode AppComponent.methode()) -->
+<h1 (click)="methode()">{{title}}</h1>
+<!-- Les crochets indique des valeurs allant du
+component vers la vue
+exemple: [class]="title" -- l'élément aura une classe
+correspondant au contenu de la variable title du component
+
+Certain attributs angular comme le ngModel font transiter
+les valeurs de la vue vers le component et inversement
+simultanement, elles sont indiquées entre crochets et
+parenthèses [()], banana in a box -->
+<input type="text" 
+      [(ngModel)]="title" 
+      [hidden]="inputShown">
+
+<!-- en utilisant le [hidden] qui attend une variable
+de type boolean, faire en sorte que l'input soit
+affiché ou non au click sur un bouton en dessous -->
+<button (click)="toggleInput()">Toggle</button>
+<input type="checkbox" [(ngModel)]="inputShown">
+<!-- En utilisant le ngModel, faire 2 input de type
+number et indiqué en dessous le résultat de l'addition
+de ces deux input -->
+
+<input type="number" [(ngModel)]="a">  
+<input type="number" [(ngModel)]="b">  
+{{a+b}}
