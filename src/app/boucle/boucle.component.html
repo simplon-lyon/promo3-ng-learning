@@ -1,0 +1,11 @@
+
+<!-- On utilise le *ngFor pour boucler sur des listes d'éléments. On peut récupérer en plus certaines variables de la boucle type index/even/odd/first/last
+Le *ngFor répétera l'élément html autant de fois qu'il y a d'item dans le tableau -->
+<!-- Les balises html ne peuvent avoir qu'un seul attribut avec un * devant -->
+<ng-container *ngFor="let item of tableau; index as clef; even as pair">
+  <!-- Le *ngIf calcul ou non un élément selon si sa valeur est true ou false. Contrairement au [hidden] qui ne fait que cacher l'élément via du css, un élément avec un *ngIf="false" n'existera tout simplement pas dans le DOM (et donc ne sera pas calculé par angular) -->
+  <p *ngIf="pair">
+    {{clef}} {{item}}
+  </p>
+
+</ng-container>
