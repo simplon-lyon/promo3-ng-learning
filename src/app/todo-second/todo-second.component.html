@@ -1,0 +1,12 @@
+<h1>Le Second Todo</h1>
+
+<ul>
+  <li *ngFor="let item of liste; index as clef">
+    {{item}} 
+    <button (click)="removeTodo(clef)">X</button>
+  </li>
+</ul>
+
+<input type="text" [(ngModel)]="newTodo" >
+
+<button (click)="addTodo()">Ajouter</button>
