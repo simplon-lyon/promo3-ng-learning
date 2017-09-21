@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {TodoService} from '../shared/todo.service';
+
+import { TodoAjaxService } from '../shared/todo-ajax.service';
 
 @Component({
   selector: 'app-todo',
@@ -7,7 +8,7 @@ import {TodoService} from '../shared/todo.service';
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent implements OnInit {
-  liste:string[];
+  liste:Object[];
   newTodo:string;
 
     /**
@@ -24,19 +25,19 @@ export class TodoComponent implements OnInit {
      * qui aura notre classe service comme type (peu importe
      * le nom de la variable tant que le type correspond)
      */
-  constructor(private todoService:TodoService) { 
+  constructor(private todoService:TodoAjaxService) { 
   }
 
   ngOnInit() {
-    this.liste = this.todoService.getTodos();
+    this.todoService.getAllTodo().then((todos) => this.liste = <Object[]>todos);
   }
 
   addTodo() {
-    this.todoService.add(this.newTodo);
+    
   }
 
   removeTodo(index:number) {
-    this.todoService.remove(index);
+    
   }
 
 }
