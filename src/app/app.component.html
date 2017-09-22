@@ -3,6 +3,7 @@
     <option value="template">Template</option>
     <option value="todo">Todo List</option>
     <option value="todo-second">Todo List Second</option>
+    <option value="chien">Liste Chien</option>
 </select>
 
 <app-boucle *ngIf="selectedPage === 'boucle'"></app-boucle>
@@ -11,3 +12,4 @@
 
 <app-todo *ngIf="selectedPage === 'todo'"></app-todo>
 <app-todo-second *ngIf="selectedPage === 'todo-second'"></app-todo-second>
+<app-liste-chien *ngIf="selectedPage === 'chien'"></app-liste-chien>

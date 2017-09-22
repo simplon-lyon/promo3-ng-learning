@@ -27,5 +27,19 @@
       "message": "test 2",
       "id": 5
     }
+  ],
+  "chien": [
+    {
+      "id": 1,
+      "nom": "rex",
+      "race": "corgi",
+      "dateNaissance": "2016-10-09"
+    },
+    {
+      "nom": "test",
+      "race": "test race",
+      "dateNaissance": "2017-01-01",
+      "id": 3
+    }
   ]
 }

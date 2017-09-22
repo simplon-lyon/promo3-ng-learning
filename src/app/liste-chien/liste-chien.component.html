@@ -1,0 +1,47 @@
+<h1>La liste de chiens</h1>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nom</th>
+      <th>Race</th>
+      <th>Date de Naissance</th>
+      <th>Supprimer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let chien of listeChien">
+      <td>{{chien.id}}</td>
+      <td>{{chien.nom}}</td>
+      <td>{{chien.race}}</td>
+      <td>{{chien.dateNaissance}}</td>
+      <td>
+        <button (click)="supprimer(chien.id)">X</button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        #
+      </td>
+      <td>
+        <input type="text" 
+        [(ngModel)]="nouveauChien.nom" />
+      </td>
+      <td>
+        <input type="text" 
+        [(ngModel)]="nouveauChien.race" />
+      </td>
+      <td>
+        <input type="date" 
+        [(ngModel)]="nouveauChien.dateNaissance" />
+      </td>
+      <td>
+          <button (click)="ajouter()">Ajouter</button>
+      </td>
+    </tr>
+
+  </tbody>
+
+</table>

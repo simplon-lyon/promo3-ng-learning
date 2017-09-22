@@ -11,6 +11,8 @@ import { TodoService } from './shared/todo.service';
 import { TodoSecondComponent } from './todo-second/todo-second.component';
 import { CompteurService } from './shared/compteur/compteur.service';
 import { TodoAjaxService } from './shared/todo-ajax.service';
+import { ListeChienComponent } from './liste-chien/liste-chien.component';
+import { ChienService } from './shared/chien/chien.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { TodoAjaxService } from './shared/todo-ajax.service';
     TemplateComponent,
     BoucleComponent,
     TodoComponent,
-    TodoSecondComponent
+    TodoSecondComponent,
+    ListeChienComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,8 @@ import { TodoAjaxService } from './shared/todo-ajax.service';
   providers: [
     TodoService,
     CompteurService,
-    TodoAjaxService
+    TodoAjaxService,
+    ChienService
   ],
   bootstrap: [AppComponent]
 })
