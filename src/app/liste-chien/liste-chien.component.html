@@ -16,7 +16,7 @@
       <td>{{chien.id}}</td>
       <td>{{chien.nom}}</td>
       <td>{{chien.race}}</td>
-      <td>{{chien.dateNaissance}}</td>
+      <td>{{chien.dateNaissance | date:'dd/MM/yyyy'}}</td>
       <td>
         <button (click)="supprimer(chien.id)">X</button>
       </td>
