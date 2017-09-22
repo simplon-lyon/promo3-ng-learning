@@ -40,6 +40,12 @@
       "race": "test race",
       "dateNaissance": "2017-01-01",
       "id": 3
+    },
+    {
+      "nom": "test",
+      "race": "teqtqdgqsgq",
+      "dateNaissance": "2017-09-13",
+      "id": 4
     }
   ]
 }
