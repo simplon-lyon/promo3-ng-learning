@@ -14,7 +14,11 @@
   <tbody>
     <tr *ngFor="let chien of listeChien">
       <td>{{chien.id}}</td>
-      <td>{{chien.nom}}</td>
+      <td>
+        <a [routerLink]="['/chien', chien.id]">
+          {{chien.nom}}
+        </a>
+      </td>
       <td>{{chien.race}}</td>
       <td>{{chien.dateNaissance | date:'dd/MM/yyyy'}}</td>
       <td>
@@ -26,19 +30,16 @@
         #
       </td>
       <td>
-        <input type="text" 
-        [(ngModel)]="nouveauChien.nom" />
+        <input type="text" [(ngModel)]="nouveauChien.nom" />
       </td>
       <td>
-        <input type="text" 
-        [(ngModel)]="nouveauChien.race" />
+        <input type="text" [(ngModel)]="nouveauChien.race" />
       </td>
       <td>
-        <input type="date" 
-        [(ngModel)]="nouveauChien.dateNaissance" />
+        <input type="date" [(ngModel)]="nouveauChien.dateNaissance" />
       </td>
       <td>
-          <button (click)="ajouter()">Ajouter</button>
+        <button (click)="ajouter()">Ajouter</button>
       </td>
     </tr>
 

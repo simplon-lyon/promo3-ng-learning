@@ -22,4 +22,9 @@ export class ChienService extends GenericService<Chien> {
   //   return this.http.delete<void>(this.urlAPI+'/'+id).toPromise();
   // }
 
+    // getChienById(id:number):Promise<Chien> {
+    //   return this.http.get<Chien>(this.urlAPI+'/'+id)
+    //   .toPromise();
+    // }
+
 }

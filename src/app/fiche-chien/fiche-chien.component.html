@@ -1,0 +1,14 @@
+<h1>Fiche du Chien</h1>
+
+<ul *ngIf="chien">
+  <li> {{chien.id}} </li>
+  <li> {{chien.nom}} </li>
+  <li> {{chien.race}} </li>
+  <li> {{chien.dateNaissance}} </li>
+
+</ul>
+
+<p *ngIf="!chien">
+  This doge does not exist or the url
+  is wrong.
+</p>
