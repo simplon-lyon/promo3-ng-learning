@@ -1,15 +1,11 @@
-<select [(ngModel)]="selectedPage">
-    <option value="boucle">Boucle</option>
-    <option value="template">Template</option>
-    <option value="todo">Todo List</option>
-    <option value="todo-second">Todo List Second</option>
-    <option value="chien">Liste Chien</option>
-</select>
+<nav>
+    <ul>
+        <li><a routerLink="/boucle" routerLinkActive="active">Boucle</a></li>
+        <li><a routerLink="/template" routerLinkActive="active">template</a></li>
+        <li><a routerLink="/todo" routerLinkActive="active">Todo</a></li>
+        <li><a routerLink="/todo-second" routerLinkActive="active">Todo Second</a></li>
+        <li><a routerLink="/chiens" routerLinkActive="active">Chiens</a></li>
+    </ul>
+</nav>
 
-<app-boucle *ngIf="selectedPage === 'boucle'"></app-boucle>
-
-<app-template *ngIf="selectedPage ==='template'"></app-template>
-
-<app-todo *ngIf="selectedPage === 'todo'"></app-todo>
-<app-todo-second *ngIf="selectedPage === 'todo-second'"></app-todo-second>
-<app-liste-chien *ngIf="selectedPage === 'chien'"></app-liste-chien>
+<router-outlet></router-outlet>

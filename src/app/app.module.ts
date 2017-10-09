@@ -13,6 +13,9 @@ import { CompteurService } from './shared/compteur/compteur.service';
 import { TodoAjaxService } from './shared/todo-ajax.service';
 import { ListeChienComponent } from './liste-chien/liste-chien.component';
 import { ChienService } from './shared/chien/chien.service';
+import {RouterModule} from '@angular/router';
+import { appRoutes } from './app.routes';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +24,14 @@ import { ChienService } from './shared/chien/chien.service';
     BoucleComponent,
     TodoComponent,
     TodoSecondComponent,
-    ListeChienComponent
+    ListeChienComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
   ],
   /*
   Pour pouvoir être injecté, un service a besoin d'être
