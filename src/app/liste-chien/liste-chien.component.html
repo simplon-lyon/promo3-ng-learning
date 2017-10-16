@@ -25,24 +25,27 @@
         <button (click)="supprimer(chien.id)">X</button>
       </td>
     </tr>
-    <tr>
-      <td>
-        #
-      </td>
-      <td>
-        <input type="text" [(ngModel)]="nouveauChien.nom" />
-      </td>
-      <td>
-        <input type="text" [(ngModel)]="nouveauChien.race" />
-      </td>
-      <td>
-        <input type="date" [(ngModel)]="nouveauChien.dateNaissance" />
-      </td>
-      <td>
-        <button (click)="ajouter()">Ajouter</button>
-      </td>
-    </tr>
-
   </tbody>
 
 </table>
+
+
+
+<section>
+  <h2>Ajouter un chien</h2>
+  <p>
+    <label>Nom : </label>
+    <input type="text" [(ngModel)]="nouveauChien.nom" />
+  </p>
+  <p>
+      <label>Race : </label>
+    <input type="text" [(ngModel)]="nouveauChien.race" />
+  </p>
+  <p>
+      <label>Date de naissance : </label>
+    <input type="date" [(ngModel)]="nouveauChien.dateNaissance" />
+  </p>
+  <p>
+    <button (click)="ajouter()">Ajouter</button>
+  </p>
+</section>

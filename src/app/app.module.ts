@@ -17,6 +17,7 @@ import {RouterModule} from '@angular/router';
 import { appRoutes } from './app.routes';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FicheChienComponent } from './fiche-chien/fiche-chien.component';
+import { AjoutChienComponent } from './liste-chien/ajout-chien/ajout-chien.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FicheChienComponent } from './fiche-chien/fiche-chien.component';
     TodoSecondComponent,
     ListeChienComponent,
     PageNotFoundComponent,
-    FicheChienComponent
+    FicheChienComponent,
+    AjoutChienComponent
   ],
   imports: [
     BrowserModule,
