@@ -9,7 +9,7 @@ import { ChienService } from '../shared/chien/chien.service';
 })
 export class ListeChienComponent implements OnInit {
   listeChien:Chien[] = [];
-
+  aModifier:Chien;
 
   constructor(private chienService:ChienService) { }
 
@@ -26,5 +26,10 @@ export class ListeChienComponent implements OnInit {
   supprimer(id:number) {
     this.chienService.delete(id)
     .then(() => this.ngOnInit());
+  }
+
+  modifier(chien:Chien) {
+    this.chienService.update(chien.id,chien)
+    .then(() => console.log(chien));
   }
 }

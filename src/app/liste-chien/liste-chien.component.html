@@ -1,13 +1,14 @@
 <h1>La liste de chiens</h1>
 
 
-<table>
+<table border="1">
   <thead>
     <tr>
       <th>Id</th>
       <th>Nom</th>
       <th>Race</th>
       <th>Date de Naissance</th>
+      <th>Modifier</th>
       <th>Supprimer</th>
     </tr>
   </thead>
@@ -22,12 +23,21 @@
       <td>{{chien.race}}</td>
       <td>{{chien.dateNaissance | date:'dd/MM/yyyy'}}</td>
       <td>
+        <button (click)="aModifier = chien">Modifer</button>
+      </td>
+      <td>
         <button (click)="supprimer(chien.id)">X</button>
       </td>
     </tr>
   </tbody>
 
 </table>
+
+<app-modifier-chien *ngIf="aModifier" 
+                    [chien]="aModifier"
+                    (onSave)="modifier($event)"></app-modifier-chien>
+
+
 <!-- Ici, on dit à notre component ajout-chien qu'il
 aura comme valeur de sa variable numeroChien la taille
 de la liste de chien qu'on a actuellement dans le 

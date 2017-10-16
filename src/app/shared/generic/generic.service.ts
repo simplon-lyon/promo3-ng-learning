@@ -24,6 +24,11 @@ export abstract class GenericService<T> {
   delete(id:number):Promise<void> {
     return this.http.delete<void>(this.urlAPI+'/'+id).toPromise();
   }
+
+  update(id:number, entity:T):Promise<T> {
+    return this.http.patch<T>(this.urlAPI+'/'+id,
+     entity).toPromise();
+  }
   
 
   
