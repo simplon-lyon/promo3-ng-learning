@@ -8,13 +8,8 @@ import { ChienService } from '../shared/chien/chien.service';
   styleUrls: ['./liste-chien.component.css']
 })
 export class ListeChienComponent implements OnInit {
-  listeChien:Chien[];
-  //Ne pas oublier d'initialiser le chien du formulaire
-  nouveauChien:Chien={
-    nom:'',
-    race:'',
-    dateNaissance:null
-  };
+  listeChien:Chien[] = [];
+
 
   constructor(private chienService:ChienService) { }
 
@@ -23,8 +18,8 @@ export class ListeChienComponent implements OnInit {
     .then((chiens) => this.listeChien = chiens);
   }
 
-  ajouter() {
-    this.chienService.add(this.nouveauChien)
+  ajouter(chien:Chien) {
+    this.chienService.add(chien)
     .then((chien) => this.listeChien.push(chien));
   }
 

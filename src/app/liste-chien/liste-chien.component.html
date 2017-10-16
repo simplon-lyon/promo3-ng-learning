@@ -28,24 +28,14 @@
   </tbody>
 
 </table>
-
-
-
-<section>
-  <h2>Ajouter un chien</h2>
-  <p>
-    <label>Nom : </label>
-    <input type="text" [(ngModel)]="nouveauChien.nom" />
-  </p>
-  <p>
-      <label>Race : </label>
-    <input type="text" [(ngModel)]="nouveauChien.race" />
-  </p>
-  <p>
-      <label>Date de naissance : </label>
-    <input type="date" [(ngModel)]="nouveauChien.dateNaissance" />
-  </p>
-  <p>
-    <button (click)="ajouter()">Ajouter</button>
-  </p>
-</section>
+<!-- Ici, on dit à notre component ajout-chien qu'il
+aura comme valeur de sa variable numeroChien la taille
+de la liste de chien qu'on a actuellement dans le 
+component liste-chien + 1
+On lui dit ensuite que lorsque l'event onAdd du component
+ajout-chien sera déclenché, alors on déclenchera la 
+méthode ajouter() du component liste-chien en lui
+fournissant en argument $event qui correspond la valeur
+fournie dans le emit() du onAdd du ajout-chien -->
+<app-ajout-chien [numeroChien]="listeChien.length + 1"
+                  (onAdd)="ajouter($event)"></app-ajout-chien>
