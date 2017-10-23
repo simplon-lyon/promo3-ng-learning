@@ -15,21 +15,21 @@ export class ListeChienComponent implements OnInit {
 
   ngOnInit() {
     this.chienService.getAll()
-    .then((chiens) => this.listeChien = chiens);
+    .subscribe((chiens) => this.listeChien = chiens);
   }
 
   ajouter(chien:Chien) {
     this.chienService.add(chien)
-    .then((chien) => this.listeChien.push(chien));
+    .subscribe((chien) => this.listeChien.push(chien));
   }
 
   supprimer(id:number) {
     this.chienService.delete(id)
-    .then(() => this.ngOnInit());
+    .subscribe(() => this.ngOnInit());
   }
 
   modifier(chien:Chien) {
     this.chienService.update(chien.id,chien)
-    .then(() => console.log(chien));
+    .subscribe(() => console.log(chien));
   }
 }

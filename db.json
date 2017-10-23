@@ -52,6 +52,12 @@
       "race": "blip",
       "dateNaissance": "1994-01-01",
       "id": 5
+    },
+    {
+      "nom": "model",
+      "race": "model",
+      "dateNaissance": "2014-02-02",
+      "id": 6
     }
   ]
 }

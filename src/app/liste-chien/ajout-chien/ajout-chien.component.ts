@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Chien } from '../../shared/chien';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-ajout-chien',
@@ -28,8 +29,9 @@ export class AjoutChienComponent implements OnInit {
    */
   @Output("onAdd")
   eventAjout:EventEmitter<Chien> = new EventEmitter();
+  formulaire:FormGroup;
 
-  constructor() { 
+  constructor(private fb:FormBuilder) { 
     this.nouveauChien = {
       nom:'',
       race: '',
@@ -38,6 +40,11 @@ export class AjoutChienComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.formulaire = this.fb.group({
+      nom:'',
+      race:'',
+      dateNaissance:null
+    });
   }
 
   ajouter() {
@@ -47,7 +54,7 @@ export class AjoutChienComponent implements OnInit {
     avec le chien en paramètre, et celui ci pourra 
     être récupéré par le parent, quel qu'il soit
     */
-    this.eventAjout.emit(this.nouveauChien);
+    this.eventAjout.emit(this.formulaire.value);
   }
 
 }

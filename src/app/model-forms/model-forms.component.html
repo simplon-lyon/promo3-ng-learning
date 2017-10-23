@@ -1,0 +1,24 @@
+<form (submit)="submit()" [formGroup]="formulaire">
+  <p>
+    <label>Nom : </label>
+    <input type="text" formControlName="nom">
+  </p>
+  <p>
+    <label>Prénom : </label>
+    <input type="text" formControlName="prenom">
+  </p>
+  <p>
+    <label>Âge : </label>
+    <input type="number" formControlName="age">
+  </p>
+
+  <button>Go !</button>
+</form>
+
+
+
+<ul *ngIf="formulaire.invalid">
+  <li *ngFor="let control of formulaire.controls">
+    control.value
+  </li>
+</ul>

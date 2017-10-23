@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
@@ -19,6 +19,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { FicheChienComponent } from './fiche-chien/fiche-chien.component';
 import { AjoutChienComponent } from './liste-chien/ajout-chien/ajout-chien.component';
 import { ModifierChienComponent } from './liste-chien/modifier-chien/modifier-chien.component';
+import { ModelFormsComponent } from './model-forms/model-forms.component';
 
 @NgModule({
   declarations: [
@@ -31,11 +32,13 @@ import { ModifierChienComponent } from './liste-chien/modifier-chien/modifier-ch
     PageNotFoundComponent,
     FicheChienComponent,
     AjoutChienComponent,
-    ModifierChienComponent
+    ModifierChienComponent,
+    ModelFormsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
