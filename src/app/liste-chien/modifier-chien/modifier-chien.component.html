@@ -1,13 +1,21 @@
 <ul>
   <li>
-    <input type="text" [(ngModel)]="chien.nom">
+    <input type="text" [(ngModel)]="chien.nom" 
+      required
+      minlength="2"
+      #nom="ngModel">
+      {{nom.valid}}
   </li>
   <li>
-    <input type="text" [(ngModel)]="chien.race">
+    <input type="text" [(ngModel)]="chien.race" 
+      required
+      minlength="2">
   </li>
   <li>
-    <input type="date" [(ngModel)]="chien.dateNaissance">
+    <input type="date" [(ngModel)]="chien.dateNaissance" 
+      required>
   </li>
 </ul>
 
-<button (click)="sauvegarder()">Sauvegarder</button>
+<button (click)="sauvegarder()"
+      [disabled]="true">Sauvegarder</button>

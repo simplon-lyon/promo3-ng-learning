@@ -2,23 +2,38 @@
   <p>
     <label>Nom : </label>
     <input type="text" formControlName="nom">
+    <span *ngIf="formulaire.get('nom').dirty &&
+     formulaire.get('nom').invalid">
+      Le nom est requis et doit faire plus de 2 caractères
+    </span>
   </p>
   <p>
     <label>Prénom : </label>
     <input type="text" formControlName="prenom">
+    {{formulaire.get('prenom').errors | json}}
+    <span *ngIf="formulaire.get('prenom').dirty &&
+     formulaire.get('prenom').invalid">
+      Le prénom est requis et doit faire plus de 2 caractères
+    </span>
   </p>
   <p>
     <label>Âge : </label>
-    <input type="number" formControlName="age">
+    <input type="text" formControlName="age">
+    <span *ngIf="formulaire.get('age').dirty &&
+     formulaire.get('age').invalid">
+      Le âge est requis
+    </span>
+    <!-- 
+      <span *ngIf="formulaire.get('age').dirty &&
+     formulaire.get('age').errors.required">
+      Le âge est requis
+    </span>
+    <span *ngIf="formulaire.get('age').dirty &&
+     formulaire.get('age').errors.age">
+      le âge doit être entre 1 et 150
+    </span>
+     -->
   </p>
 
-  <button>Go !</button>
+  <button [disabled]="formulaire.invalid">Go !</button>
 </form>
-
-
-
-<ul *ngIf="formulaire.invalid">
-  <li *ngFor="let control of formulaire.controls">
-    control.value
-  </li>
-</ul>

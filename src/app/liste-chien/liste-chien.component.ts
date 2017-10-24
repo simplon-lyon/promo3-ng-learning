@@ -16,6 +16,7 @@ export class ListeChienComponent implements OnInit {
   ngOnInit() {
     this.chienService.getAll()
     .subscribe((chiens) => this.listeChien = chiens);
+
   }
 
   ajouter(chien:Chien) {
