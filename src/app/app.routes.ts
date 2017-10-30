@@ -7,6 +7,7 @@ import { ListeChienComponent } from "./liste-chien/liste-chien.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { FicheChienComponent } from "./fiche-chien/fiche-chien.component";
 import { ModelFormsComponent } from "./model-forms/model-forms.component";
+import { ChienGuard } from "./shared/chien.guard";
 
 
 /*
@@ -22,7 +23,7 @@ export const appRoutes:Routes = [
     {path: 'todo', component: TodoComponent},
     {path: 'todo-second', component: TodoSecondComponent},
     {path: 'chiens', component: ListeChienComponent},
-    {path: 'chien/:id', component: FicheChienComponent},
+    {path: 'chien/:id', component: FicheChienComponent, canActivate: [ChienGuard]},
     {path: 'model', component: ModelFormsComponent},
     //On peut faire des redirections sur certaines routes
     {path: '', pathMatch:'full' , redirectTo: '/chiens'},

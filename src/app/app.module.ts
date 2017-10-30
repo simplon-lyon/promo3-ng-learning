@@ -20,6 +20,7 @@ import { FicheChienComponent } from './fiche-chien/fiche-chien.component';
 import { AjoutChienComponent } from './liste-chien/ajout-chien/ajout-chien.component';
 import { ModifierChienComponent } from './liste-chien/modifier-chien/modifier-chien.component';
 import { ModelFormsComponent } from './model-forms/model-forms.component';
+import { ChienGuard } from './shared/chien.guard';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { ModelFormsComponent } from './model-forms/model-forms.component';
     TodoService,
     CompteurService,
     TodoAjaxService,
-    ChienService
+    ChienService,
+    ChienGuard
   ],
   bootstrap: [AppComponent]
 })
