@@ -16,7 +16,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let chien of listeChien">
-      <td>{{chien.id | empty}}</td>
+      <td>{{chien.id}}</td>
       <td>
         <a [routerLink]="['/chien', chien.id]">
           {{chien.nom}}
