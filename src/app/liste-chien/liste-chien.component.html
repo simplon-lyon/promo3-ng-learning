@@ -1,6 +1,8 @@
 <h1>La liste de chiens</h1>
 
 
+{{listeChien | empty}}
+
 <table border="1">
   <thead>
     <tr>
@@ -14,7 +16,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let chien of listeChien">
-      <td>{{chien.id}}</td>
+      <td>{{chien.id | empty}}</td>
       <td>
         <a [routerLink]="['/chien', chien.id]">
           {{chien.nom}}

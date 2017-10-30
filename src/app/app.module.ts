@@ -21,6 +21,7 @@ import { AjoutChienComponent } from './liste-chien/ajout-chien/ajout-chien.compo
 import { ModifierChienComponent } from './liste-chien/modifier-chien/modifier-chien.component';
 import { ModelFormsComponent } from './model-forms/model-forms.component';
 import { ChienGuard } from './shared/chien.guard';
+import { EmptyPipe } from './shared/empty.pipe';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ChienGuard } from './shared/chien.guard';
     FicheChienComponent,
     AjoutChienComponent,
     ModifierChienComponent,
-    ModelFormsComponent
+    ModelFormsComponent,
+    EmptyPipe
   ],
   imports: [
     BrowserModule,
